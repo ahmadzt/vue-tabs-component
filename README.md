@@ -202,6 +202,32 @@ When disabling the cache, it can be useful to specify a default tab to load whic
 </tabs>
 ```
 
+
+### Changing tab programmatically
+
+It is possible to change to different tab from Javascript by referring the `tabs` using `ref`.
+
+```html
+<tabs ref="my_tabs">
+    <tab name="First tab">
+        First tab content
+    </tab>
+    <tab name="Second tab">
+        Second tab content
+    </tab>
+</tabs>
+```
+
+After that in Javascript, call the tabs reference and pass the target tab hash value to `selectTab` method.
+
+```js
+methods: {
+    nextTab () {
+        this.$refs.my_tabs.selectTab('#second-tab');
+    }
+}
+```
+
 ### CSS
 
 You can use the [CSS](docs/resources/tabs-component.css) from the docs as a starting point for your own styling.
